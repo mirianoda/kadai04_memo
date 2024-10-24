@@ -201,11 +201,12 @@ let selectBet = Number("");
 
 $(".start").on("click", function () {
     var audio2 = $('#charin')[0];
-    audio2.play(); 
+    credit = Number($("#credit").text());
     selectBet = Number($(this).val());
     if (selectBet > credit) {
         return
     } else if (selectBet <= credit) {
+        audio2.play(); 
         $("#bet").text(selectBet);
         credit = Number($("#credit").text());
         $("#credit").text(credit - selectBet);
